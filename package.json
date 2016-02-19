@@ -41,6 +41,7 @@
     "idb-factory": "^1.0.0",
     "idb-schema": "^3.2.1",
     "indexeddbshim": "^2.2.1",
+    "lodash.map": "^4.2.0",
     "polyfill-function-prototype-bind": "0.0.1",
     "regenerator": "^0.8.42",
     "zuul": "^3.9.0"
