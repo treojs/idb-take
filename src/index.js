@@ -31,10 +31,14 @@ export function take(store, range = null, opts = {}) {
   const req = store.openCursor(parseRange(range), direction)
   let offsetCounter = offset
 
-  return mapCursor(req, (cursor, result) => {
+  return mapCursor(req, (cursor, result, stop) => {
     if (offsetCounter === 0) {
-      if (limit > result.length) result.push(cursor.value) // FIXME: exit earlier
-      cursor.continue()
+      if (limit > result.length) {
+        result.push(cursor.value)
+        cursor.continue()
+      } else {
+        stop()
+      }
     } else {
       offsetCounter -= 1
       cursor.continue()
