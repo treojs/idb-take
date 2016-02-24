@@ -1,7 +1,7 @@
 {
   "name": "idb-take",
   "description": "Take values from IDBStore or IDBIndex",
-  "repository": "treojs/idb-schema",
+  "repository": "treojs/idb-take",
   "version": "1.0.0",
   "license": "MIT",
   "main": "lib/index.js",
