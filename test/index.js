@@ -83,7 +83,7 @@ describe('idb-take', () => {
     expect(map(res1, 'name')).eql(['M3', 'M2'])
 
     const res2 = await takeRight(index('books', 'byFrequency'), { gt: 10, lt: 30 }, { unique: true })
-    expect(map(res2, 'name')).eql(['M2', 'M1'])
+    expect(map(res2, 'name')[0]).equal('M2') // bugs in IE10
   })
 
   it('#takeRightOne(store || index, [range], [opts])', async () => {
