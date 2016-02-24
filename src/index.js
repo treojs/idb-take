@@ -56,9 +56,11 @@ export function takeRight(store, range, opts = {}) {
 }
 
 export function takeOne(store, range, opts = {}) {
+  opts.limit = 1
   return take(store, range, opts).then(([val]) => val)
 }
 
 export function takeRightOne(store, range, opts = {}) {
+  opts.limit = 1
   return takeRight(store, range, opts).then(([val]) => val)
 }
